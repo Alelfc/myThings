@@ -1,2 +1,0 @@
-# myThings
-Personal project
