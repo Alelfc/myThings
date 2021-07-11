@@ -9,6 +9,12 @@ import './css/App.css';
 
 const App = () => {
 
+  const rotationFunction = stack => {
+    const newArray = stack.split('');
+    newArray.push(newArray.shift());
+    return newArray.join('');
+  }
+
   const [stack, setStack] = useState('');
 
   const items = words(stack, /[^-^+^*^/]+/g);
@@ -27,6 +33,9 @@ const App = () => {
             const newStack = stack.substring(0, stack.length-1)
             setStack(newStack)
           }
+        }}
+        rotation={() => {
+          setStack(rotationFunction(stack));
         }}
       />
       <MathOperations 
